@@ -2,9 +2,9 @@
 
 ## About
 
-This project provides development environment for Fullstack development in form of a dev container. 
+This project provides a development environment for Fullstack development in form of a dev container. 
 It includes tooling for Go, Node, and Python.
-The "base" image is available at "mibreit/mibreit-fullstack:latest" at Dockerhub.
+The "base" image is available at [mibreit/mibreit-fullstack:latest](https://hub.docker.com/r/mibreit/mibreit-fullstack) at Dockerhub.
 
 ## Dev Containers
 
