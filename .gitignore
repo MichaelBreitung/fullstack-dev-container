@@ -1,0 +1,33 @@
+# IDE
+.vscode
+.idea
+
+# Node
+node_modules
+
+# Python
+venv
+**/__pycache__
+.pytest_cache
+.mypy_cache
+
+# Documentation
+*.bkp
+
+# Keys
+*.pem
+*.crt
+
+# Environment
+.env
+
+# build
+build
+dist
+*.egg-info
+temp
+*.tsbuildinfo
+
+# data
+temp
+

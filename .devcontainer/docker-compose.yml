@@ -1,0 +1,25 @@
+services:
+  mibreit-fullstack-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      # If you have a node_modules folder, add it here 
+      #- /home/developer/develop/node_modules
+      # main project folder mount
+      - ..:/home/developer/develop
+      # ssh keys mount
+      - ${HOME}/.ssh:/home/developer/.ssh
+      # docker socket mount
+      - /var/run/docker.sock:/var/run/docker.sock
+      # kube config
+      - ${HOME}/.kube:/home/developer/.kube
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+      # Overrides default command so things don't shut down after the process ends.
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    environment:
+      - USER=developer
+      - UID
+
+  
