@@ -10,28 +10,43 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "dbaeumer.vscode-eslint",
-                "asciidoctor.asciidoctor-vscode",
-                "redhat.vscode-yaml",
-                "ms-azuretools.vscode-docker",
-                "eamodio.gitlens",
-                "esbenp.prettier-vscode",
-                "yoavbls.pretty-ts-errors",
-                "ms-python.python",
-                "ms-python.mypy-type-checker",
-                "ms-python.pylint",
-                "ms-python.black-formatter",
-                "postman.postman-for-vscode",
-                "mtxr.sqltools",
-                "mtxr.sqltools-driver-pg",
-                "ms-kubernetes-tools.vscode-kubernetes-tools",
-                "mongodb.mongodb-vscode",
-                "golang.go"
+              // Basic Extensions for better developmer experience
+              "streetsidesoftware.code-spell-checker",
+              "asciidoctor.asciidoctor-vscode",
+              "ms-azuretools.vscode-docker",
+              "eamodio.gitlens",
+              "postman.postman-for-vscode",
+              "mtxr.sqltools",
+              "mtxr.sqltools-driver-pg",
+              "mongodb.mongodb-vscode",
+              "ms-kubernetes-tools.vscode-kubernetes-tools",
+              "42crunch.vscode-openapi",
+              "gruntfuggly.todo-tree",
+              "yoavbls.pretty-ts-errors",
+              "DavidAnson.vscode-markdownlint",
+              // Code Quality
+              "dbaeumer.vscode-eslint",
+              "charliermarsh.ruff",
+              // Code Formatting
+              "redhat.vscode-yaml",
+              "esbenp.prettier-vscode",
+              "ms-python.black-formatter",
+              "yzhang.markdown-all-in-one",
+              "EditorConfig.EditorConfig",
+              // Python
+              "ms-toolsai.jupyter",
+              "ms-python.python",
+              "ms-python.isort",
+              "tamasfe.even-better-toml",
+              "njpwerner.autodocstring",
+              "golang.go"
             ],
             "settings": {
                 "editor.tabSize": 2,
                 "editor.formatOnSave": true,
-                "editor.codeActionsOnSave": {},
+                "editor.codeActionsOnSave": {
+                  "source.organizeImports": "explicit"
+                },
                 "editor.trimAutoWhitespace": true,
                 "editor.defaultFormatter": "ms-python.black-formatter",
                 "[javascript]": {
@@ -58,14 +73,38 @@
                 "[dockerfile]": {
                   "editor.defaultFormatter": "ms-azuretools.vscode-docker"
                 },
+                "[python]": {
+                  "editor.rulers": [
+                    88
+                  ],
+                  "editor.tabSize": 4,
+                  "editor.defaultFormatter": "ms-python.black-formatter"
+                },
                 "typescript.updateImportsOnFileMove.enabled": "always",
                 "javascript.updateImportsOnFileMove.enabled": "always",
                 "mypy-type-checker.importStrategy": "fromEnvironment",
                 "mypy-type-checker.args": ["--strict", "--show-error-codes", "--cache-dir", "build/.mypy_cache"],
-                "python.pythonPath": "/usr/bin/python3",
-                "python.analysis.autoImportCompletions": true,
+                "python.pythonPath": "/usr/bin/python3.11",
+                "python.languageServer": "Pylance",
+                "python.analysis.autoImportCompletions": false,
                 "python.analysis.indexing": true,
+                "python.analysis.exclude": [
+                  "**/build",
+                  "**/.venv"
+                ],
                 "html.suggest.html5": true,
+                "autoDocstring.docstringFormat": "google",
+                "autoDocstring.startOnNewLine": true,
+                "yaml.schemas": {
+                  "https://taskfile.dev/schema.json": [
+                    "**/*Taskfile.yaml"
+                  ]
+                },
+                "ruff.codeAction.fixViolation": {
+                  "enable": false
+                },
+                "ruff.fixAll": false,
+                "isort.importStrategy": "fromEnvironment"
             }
         }
     }
